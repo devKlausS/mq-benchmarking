@@ -6,8 +6,8 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/tylertreat/mq-benchmarking/benchmark"
-	"github.com/tylertreat/mq-benchmarking/benchmark/mq"
+	"github.com/devKlausS/mq-benchmarking/benchmark"
+	"github.com/devKlausS/mq-benchmarking/benchmark/mq"
 )
 
 func newTester(subject string, testLatency bool, msgCount, msgSize int) *benchmark.Tester {
