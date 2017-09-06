@@ -15,54 +15,10 @@ func newTester(subject string, testLatency bool, msgCount, msgSize int) *benchma
 	var messageReceiver benchmark.MessageReceiver
 
 	switch subject {
-	case "inproc":
-		inproc := mq.NewInproc(msgCount, testLatency)
-		messageSender = inproc
-		messageReceiver = inproc
-	case "zeromq":
-		zeromq := mq.NewZeromq(msgCount, testLatency)
-		messageSender = zeromq
-		messageReceiver = zeromq
-	case "nanomsg":
-		nanomsg := mq.NewNanomsg(msgCount, testLatency)
-		messageSender = nanomsg
-		messageReceiver = nanomsg
-	case "kafka":
-		kafka := mq.NewKafka(msgCount, testLatency)
-		messageSender = kafka
-		messageReceiver = kafka
-	case "rabbitmq":
-		rabbitmq := mq.NewRabbitmq(msgCount, testLatency)
-		messageSender = rabbitmq
-		messageReceiver = rabbitmq
-	case "nsq":
-		nsq := mq.NewNsq(msgCount, testLatency)
-		messageSender = nsq
-		messageReceiver = nsq
-	case "redis":
-		redis := mq.NewRedis(msgCount, testLatency)
-		messageSender = redis
-		messageReceiver = redis
-	case "activemq":
-		activemq := mq.NewActivemq(msgCount, testLatency)
-		messageSender = activemq
-		messageReceiver = activemq
 	case "nats":
 		gnatsd := mq.NewGnatsd(msgCount, testLatency)
 		messageSender = gnatsd
 		messageReceiver = gnatsd
-	case "beanstalkd":
-		beanstalkd := mq.NewBeanstalkd(msgCount, testLatency)
-		messageSender = beanstalkd
-		messageReceiver = beanstalkd
-	case "iris":
-		iris := mq.NewIris(msgCount, testLatency)
-		messageSender = iris
-		messageReceiver = iris
-	case "surge":
-		surge := mq.NewSurgeMQ(msgCount, testLatency)
-		messageSender = surge
-		messageReceiver = surge
 	default:
 		return nil
 	}
