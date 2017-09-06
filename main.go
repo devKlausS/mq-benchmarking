@@ -27,10 +27,6 @@ func newTester(subject string, testLatency bool, msgCount, msgSize int) *benchma
 		nanomsg := mq.NewNanomsg(msgCount, testLatency)
 		messageSender = nanomsg
 		messageReceiver = nanomsg
-	case "kestrel":
-		kestrel := mq.NewKestrel(msgCount, testLatency)
-		messageSender = kestrel
-		messageReceiver = kestrel
 	case "kafka":
 		kafka := mq.NewKafka(msgCount, testLatency)
 		messageSender = kafka
